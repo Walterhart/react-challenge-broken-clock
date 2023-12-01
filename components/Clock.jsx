@@ -26,10 +26,13 @@ export default function Clock(props) {
 
 /* ------------- Write your code below! ---------------------------------------*/
 
-
-
-
-
+    React.useEffect(()=>{
+         
+        const interval = setInterval(()=>{setTime(getTime) },200)// 200 because clock could be open in middle of a second. This make it more accurate
+        return () => {
+            clearInterval(interval);
+        }
+    },[])
 
 /* ------------- Write your code above! -------------------------------------*/
   
